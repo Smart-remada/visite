@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bienvenue</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f2f2f2;
+      color: #333;
+    }
+    #content {
+      display: none;
+    }
+    #passwordBox {
+      max-width: 400px;
+      margin: 100px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      text-align: center;
+    }
+    input[type=password] {
+      width: 80%;
+      padding: 10px;
+      font-size: 16px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #004080;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #002f5a;
+    }
+    header {
+      background-color: #004080;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    header img {
+      height: 60px;
+    }
+    header h1 {
+      flex: 1;
+      text-align: center;
+      margin: 0;
+    }
+    section {
+      padding: 20px;
+    }
+    .gallery {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+    }
+    .gallery img {
+      width: 300px;
+      height: auto;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+    .pdf-download {
+      margin: 30px auto;
+      text-align: center;
+    }
+    .pdf-download a {
+      text-decoration: none;
+      background-color: #004080;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      display: inline-block;
+      transition: background-color 0.3s ease;
+    }
+    .pdf-download a:hover {
+      background-color: #002f5a;
+    }
+    footer {
+      background-color: #004080;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+    #error {
+      color: red;
+      display: none;
+      margin-top: 10px;
+    }
+	.carousel-wrapper {
+  position: relative;
+  width: 90%;
+  margin: auto;
+  overflow: hidden;
+}
+
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding: 20px 40px;
+}
+
+.carousel img {
+  flex: 0 0 auto;
+  width: 300px;
+  height: auto;
+  border-radius: 8px;
+  scroll-snap-align: center;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #004080;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  font-size: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.carousel-button.left {
+  left: 5px;
+}
+
+.carousel-button.right {
+  right: 5px;
+}
+
+.carousel-button:hover {
+  background-color: #002f5a;
+}
+
+
+
+  </style>
+</head>
+<body>
+
+  <div id="passwordBox">
+    <h2>Entrez le mot de passe pour accéder à la visite</h2>
+    <input type="password" id="pwd" placeholder="Mot de passe" />
+    <br />
+    <button onclick="checkPassword()">Valider</button>
+    <p id="error">Mot de passe incorrect</p>
+  </div>
+
+  <div id="content">
+    <header>
+      <img src="logo aviation.png" alt="Logo gauche">
+      <h1>REMEDA SMART-BASE</h1>
+      <img src="logormeda.png" alt="Logo droite">
+    </header>
+<section class="pdf-download">
+  <p style="text-align: justify; text-indent: 30px;">
+    Située à l’extrême sud de la Tunisie, en plein cœur du désert, la première base intelligente d’Afrique du Nord a vu le jour à Remada. Entièrement conçue et réalisée grâce à des compétences tunisiennes, elle témoigne du savoir-faire national dans le domaine stratégique de la défense et de la technologie.
+  </p>
+  <p>Pour en découvrir davantage :</p>
+  <a href="QR code.pdf" target="_blank">📄 Télécharger le PDF</a>
+</section>
+	  
+    <section>
+      <h2 style="text-align: justify; text-indent: 30px;">La base intelligente de Remada a eu l’honneur d’accueillir, le 03 juin 2025, la 42e promotion de l’Institut National de la Défense.</h2>
+      <p style="text-align: justify; text-indent: 30px;"> À cette occasion, nous mettons à votre disposition une sélection de photos illustrant les temps forts de cette visite. N’hésitez pas à les télécharger afin d’en conserver un souvenir durable.</p>
+ <div class="carousel-wrapper">
+  <button class="carousel-button left" onclick="scrollCarousel(-1)">&#10094;</button>
+
+  <div class="carousel" id="carousel">
+    <img src="v1.jpg" alt="Photo 1" />
+    <img src="logo.jpg" alt="Photo 2" />
+    <img src="logo.jpg" alt="Photo 3" />
+     <img src="logo.jpg" alt="Photo 4" />
+     <img src="logo.jpg" alt="Photo 5" />
+     <img src="logo.jpg" alt="Photo 6" />
+  </div>
+
+  <button class="carousel-button right" onclick="scrollCarousel(1)">&#10095;</button>
+</div>
+    </section>
+	  
+<section style="text-align:center; padding: 20px; font-size: 1.2em;">
+  <p><strong>Merci pour votre visite et à bientôt.</strong></p>
+</section>
+  
+    <footer>
+      &copy; 2025 La base aérienne Remeda - Tous droits réservés
+    </footer>
+  </div>
+
+  <script>
+    const correctPassword = "idn2025";
+
+    function checkPassword() {
+      const input = document.getElementById("pwd").value;
+      const errorMsg = document.getElementById("error");
+      if (input === correctPassword) {
+        document.getElementById("passwordBox").style.display = "none";
+        document.getElementById("content").style.display = "block";
+        errorMsg.style.display = "none";
+      } else {
+        errorMsg.style.display = "block";
+      }
+    }
+
+  function scrollCarousel(direction) {
+    const container = document.getElementById("carousel");
+    const scrollAmount = 320;
+    container.scrollBy({
+      left: scrollAmount * direction,
+      behavior: "smooth"
+    });
+  }
+
+  </script>
+
+</body>
+</html>

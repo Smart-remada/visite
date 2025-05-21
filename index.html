@@ -60,6 +60,26 @@
       text-align: center;
       margin: 0;
     }
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.header-logo {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+}
+
+.header-title {
+  flex: 1;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
     section {
       padding: 20px;
     }
@@ -169,17 +189,19 @@
   </div>
 
   <div id="content">
-    <header>
-      <img src="logo aviation.png" alt="Logo gauche" style="width:200px; height:200px;">
-      <h1>REMADA SMART-BASE</h1>
-      <img src="logormeda.png" alt="Logo droite" style="width:100px; height:100px;">
-    </header>
+   <header>
+  <div class="header-container">
+    <img src="logo aviation.png" alt="Logo gauche" class="header-logo">
+    <div class="header-title">REMADA SMART-BASE</div>
+    <img src="logormeda.png" alt="Logo droite" class="header-logo">
+  </div>
+</header>
 <section class="pdf-download">
   <p style="text-align: justify; text-indent: 30px;">
     Située à l’extrême sud de la Tunisie, en plein cœur du désert, la première base intelligente d’Afrique du Nord a vu le jour à Remada. Entièrement conçue et réalisée grâce à des compétences tunisiennes, elle témoigne du savoir-faire national dans le domaine stratégique de la défense et de la technologie.
   </p>
   <p>Pour en découvrir davantage :</p>
-  <a href="مقال حول ق ج ذكية برمادة.pdf" target="_blank">📄 Télécharger le PDF</a>
+  <a href="QR code.pdf" target="_blank">📄 Télécharger le PDF</a>
 </section>
 	  
     <section>
